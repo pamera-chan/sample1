@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>パメラの計算式置き場(学習用)</title>
+    <link rel="stylesheet" href="stylesheet.css">
+  </head>
+  <body>
+    <div class="heading">
+      <h1>クリティカル率計算用</h1>
+      <p>お試しでクリティカル率計算のサイトを作ってみました
+        <br>
+        他には何もないです
+      </p>
+    </div>
+    <form>
+      <br>
+      攻撃側の会心
+      <br>
+      <input type="number" name="Acri" value="" size="10">
+      <br>
+      <br>
+      防御側の運
+      <br>
+      <input type="number" name="Dluk" value="" size="10">
+      <br>
+      <br>
+      高低差(攻撃側の位置の高さ-防御側の位置の高さ)
+      <br>
+      <input type="number" name="Hcri" list="numlist" size="10">
+      <br>
+      <datalist id="numlist">
+      <br>
+      <option value="5">
+        高所
+      </option>
+      <br>
+      <option value="0">
+        同高度
+      </option>
+      <br>
+      <option value="-5">
+        低所
+      </option>
+      <br>
+    </datalist>
+    <br>
+    補正合計値(装備、念装、アビリティ、スキル、LSの合計値)
+    <br>
+    <input type="number" name="Bluk" value="" size="10">
+    <br>
+    <br>
+    <input type="button" onclick="op1.value = ((Math.floor(Math.sqrt(Number(Acri.value)))*2-Math.floor(Math.sqrt(Number(Dluk.value))/2))+(Number(Bluk.value))+(Number(Hcri.value)));" value="計算する">
+    <br>
+    <br>
+    <div class="result">
+      クリティカル率　
+      <output name="op1">
+        0
+      </output>
+      %<br>
+    </div>
+  </form>
+  </body>
+</html>
